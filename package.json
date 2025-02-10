@@ -1,0 +1,40 @@
+{
+  "name": "task-manager",
+  "version": "1.0.0",
+  "description": "a project to manage your daily tasks",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js --ignore public --ignore frontend --ignore dev",
+    "webTest": "webpack",
+    "dev": "webpack -w"
+  },
+  "keywords": [],
+  "author": "Gabriel",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "babel-loader": "^9.2.1",
+    "nodemon": "^3.1.9",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^5.1.0",
+    "core-js": "^3.39.0",
+    "css-loader": "^7.1.2",
+    "csurf": "^1.2.2",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "mongoose": "^8.9.4",
+    "regenerator-runtime": "^0.14.1",
+    "style-loader": "^4.0.0",
+    "validator": "^13.12.0"
+  }
+}

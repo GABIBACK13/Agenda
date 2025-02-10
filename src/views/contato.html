@@ -1,0 +1,52 @@
+<%- include('includes/header.html') %>
+<%- include('includes/nav.html') %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2">
+
+      </div>
+      <div class="col-lg-8 my-3">
+        <h1 class="text-center display-1 ">Contato</h1>
+        <p class="text-center lead">Registre seu contato</p>
+        <%- include('includes/messeges.html') %>
+        <% if(contato._id) { %>
+          <form action="/contato/edit/<%= contato._id %>" method="POST">
+        <% } else { %>
+          <form action="/contato/register" method="POST">
+        <% } %>
+          <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+          
+          <input type="hidden" name="userEmail" value=<%= user.email %>>
+          
+          <div class="form-group">
+            <label for="name">nome:</label>
+            <input value="<%= contato.name %>" type="text" class="form-control" id="name" name="name" required="required" minlength="3" maxlength="20">
+          </div>
+
+          <div class="form-group">
+            <label for="last-name">Sobrenome:</label>
+            <input value="<%= contato.lastName %>" type="text" class="form-control" id="last-name" name="lastName" maxlength="30">
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">telefone:</label>
+            <input value="<%= contato.phone %>" type="tel" class="form-control" id="phone" name="phone" placeholder="(XX) XXXXX-XXXX">
+          </div>
+
+          <div class="form-group">
+            <label for="Email">Email:</label>
+            <input value="<%= contato.email %>" type="email" class="form-control" id="Email" name="email" placeholder="exemplo@email.com">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+      </div>
+
+      <div class="col-lg-2">
+
+      </div>
+    </div>
+  </div>
+
+<%- include('includes/footer.html')%>
