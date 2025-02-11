@@ -53,6 +53,5 @@ app.use(route);
 app.on('connReady', () => {
   app.listen(port, () => {
     console.log(`\n=== server is running ===    =-port:${port}-=\n`);
-    console.log(`http://localhost:${port}`);
   });
 });
